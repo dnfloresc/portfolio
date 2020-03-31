@@ -1,0 +1,269 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+}
+
+h1{ 
+  font-size: 40px; /*tamaño de fuente*/
+  line-height: 150%; /*alto de línea*/
+  letter-spacing: -.2px; /*espacio entre letras*/
+  text-transform: none /*mayuscula o mnuscula*/;
+  color: #515253;
+  margin: 0;
+  /*margin: 100px 150px 70px 30px;*/
+  /*text-decoration: underline;*/
+}
+
+h1 strong{
+  color: #698c8b;
+}
+
+h2{
+  color: #698c8b;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro';
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.hero{
+height: 300px;
+/*background-image: url('../images/hero.jpg');*/
+background-color: #ffe1e1;
+/*background-size: 500px 300px;
+background-repeat: no-repeat;
+background-position-x: right;*/ /*posición en X desde la derecha. Se ocultan al final para poder hacer la alineacion de la img dentro del container*/ 
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.hero-image{
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.portfolio{
+  background: #fafafa;
+  padding: 20px;
+}
+
+.project {
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-details{
+  width: 500px;
+}
+
+.project-title {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-course, .project-date,
+.project-url{
+margin: 10px, 0;
+}
+
+.project-description{
+  font-size: 20px;
+}
+
+.project strong{
+  font-family: 'Fjalla One', sans-serif;;
+}
+
+.project-imageContainer{
+  width: 500px;
+}
+
+.header{
+  background-color:white;
+  color: #1d252c;
+  display:flex;
+  height: 70px;
+  height: 90px;
+  justify-content: space-between;
+}
+
+.logo{
+  margin-top: -35px;
+}
+
+.menu{
+  height: inherit; /*alto heredado del padre*/
+}
+
+.header ol{
+  display: flex;
+  height: inherit; 
+}
+
+.header ol li{
+  height: inherit;
+}
+
+.header a{
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding: 0 10px; /*espaciado hacia arr-ab, izq-der*/
+  color: #1d252c;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+ol,ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure{
+  margin: 0
+}
+
+.courses-list-title{
+  margin-left: 20px;
+}
+
+.courses-list{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.course{
+  margin: 10px;
+  width: 480px;
+  flex-shrink: 0;
+  border-radius: 10px; /*redondea el borde*/
+  overflow: hidden; /*genera scrolls. Si se desborda de su elemento, lo oculta*/
+  background: #ffe1e1;
+}
+
+.course img{
+  width: 480px;
+  height: 200px;
+  object-fit: cover; /*ajusta la imagen al tamaño deseado*/
+}
+
+.course-detail{
+  margin: 20px 40px;
+  background-color: white;
+  position: relative; /*sobrepone una imagen en otra*/
+  margin-top: -40px; /* en negativo para disminuir el margen de un elemento y quede más cerca/junto de otro*/
+  padding: 20px;
+  text-align: center;
+}
+
+.course-description{
+  text-align: left;
+}
+
+.course-url{
+  color: #698c8b;
+  border: 1px solid #698c8b;
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.contact{
+  background-color: #698c8b;
+  color: white;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-email input{
+  border-color: gray;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px 10px 25px;
+  background-image: url('../Images/envelope.svg');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: center;
+}
+
+.form-email button{
+  display: block;
+  margin-top: 10px;
+  background: transparent;
+  color: white;
+  padding: 10px 0px;
+  border-radius: 5px;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.form-email h3{
+  font-family: 'Source Sans Pro';
+}
+
+.social{
+}
+
+.social-link{
+  display:inline-block; /*los <a> tienen por defecto display inline*/
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  margin: 0px 10px;
+  background-size: 30px 30px;
+}
+
+.social-link.twitter{
+  background-image: url('../Images/twitter.svg');
+}
+
+.social-link.instagram{
+  background-image: url('../Images/instagram.svg');
+  }
+
+  .social-link.github{
+    background-image: url('../Images/github.svg');
+    }
+
+.footer{
+  color: white;
+  background-color: #1b2127;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer img{
+  vertical-align: middle; /*Util para cuando se mexcla tex con img*/
+}
+
+.container{
+  width: 1000px;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  height: inherit;
+  flex-wrap: inherit;
+}/*cada sección debe envolverse en un container para
+llevar el contenido al centro, como dentro de una caja. 
+En lugar de darle un mismo fondo a todo el body*/
