@@ -6,12 +6,14 @@
     <link rel="icon" type="image/png" href="Images/favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet"  href="css/estilos.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
   <body>
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <header class="header">
       <div class="container">
         <figure class="logo">
-          <img src="Images/logo-final.png" height="180px" alt="Logo de http://dulceflores.com"/>
+          <img src="Images/logo.png" height="60px" alt="Logo de http://dulceflores.com"/>
         </figure>
         <nav class="menu">
           <ol>
@@ -36,7 +38,7 @@
         <img class="hero-image" src="images/hero.jpg" width="500" height="300" alt="principal images' site"/>
       </div>
     </section>
-    <section id:"portafolio" class="portfolio">
+    <section id="portafolio" class="portfolio">
       <div class="container">
         <h2>Portfolio (My coding projects)</h2>
         <article class="project">
@@ -132,9 +134,29 @@
           <p>Web Design Course 2018 <img src= "images/platzi.png" width="80px" alt ="Logo de Plazti"/></p>
         </div>
         <div>
-          <p>Designed with <\3 by <a href="https://twitter.com/iamdulce_">@iamdulce_</a></p>
+          <p>Designed with 💚 by <a href="https://twitter.com/iamdulce_">@iamdulce_</a></p>
         </div>
       </div>
     </footer>
+    <script>
+      const ipad = window.matchMedia("screen and (max-width: 767px)");
+      const menu = document.querySelector(".menu"); 
+      const burgerButton = document.querySelector("#burger-menu");
+
+      ipad.addListener(validation)
+
+      function validation(event){
+        if (event.matches) {
+          burgerButton.addEventListener("click", showHide)
+        } else{
+          burgerButton.removeEventListener("click", showHide)
+        }
+      }
+      validation(ipad);
+
+      function showHide(){
+        menu.classList.toggle("is-active");
+      }
+    </script>
   </body>
 </html>

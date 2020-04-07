@@ -1,3 +1,49 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?fynqng');
+  src:  url('../fonts/icomoon.eot?fynqng#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?fynqng') format('truetype'),
+    url('../fonts/icomoon.woff?fynqng') format('woff'),
+    url('../fonts/icomoon.svg?fynqng#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
+.burger-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /*Es como si se estuviese asignando 20px*/
+  background-color: #698c8b; 
+  display: none; /*Por defecto para que solo se vea según las condiciones del MQ*/
+  line-height: 40px;
+  text-align: center; /*estas dos propiedades hacen las veces de alignI y justifyC*/
+  position: fixed;/*permite fijar o mover un elemento según el valor asignado*/
+  z-index: 4;
+  left: 5px;
+  top: 5px;
+  color: white;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
@@ -42,6 +88,7 @@ background-position-x: right;*/ /*posición en X desde la derecha. Se ocultan al
 display: flex;
 align-items: center;
 justify-content: space-between;
+flex-wrap: wrap;
 }
 
 .hero-image{
@@ -63,11 +110,13 @@ justify-content: space-between;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .project-details{
-  width: 500px;
-}
+  width: 50%; 
+} /*Pasa de ser 500px a 50% para que evitar que tengan un tamañó fijo
+y más que su contenedor (tiene 1000px)= medidas relativas*/
 
 .project-title {
   font-size: 30px;
@@ -89,20 +138,27 @@ margin: 10px, 0;
 }
 
 .project-imageContainer{
-  width: 500px;
-}
+  width: 50%; 
+} /*Pasa de ser 500px a 50% para que evitar que tengan un tamañó fijo
+y más que su contenedor (tiene 1000px)= medidas relativas*/
+
+.project-imageContainer img {
+  max-width: 100%;
+} /*forma de hacer las imag responsive es que los valores de sus elementos sean
+el 100% de su elemento padre*/
 
 .header{
   background-color:white;
   color: #1d252c;
   display:flex;
   height: 70px;
-  height: 90px;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.logo{
-  margin-top: -35px;
+figure {
+  margin: 0;
 }
 
 .menu{
@@ -149,8 +205,8 @@ figure{
 }
 
 .course{
-  margin: 10px;
-  width: 480px;
+  margin: 1%;
+  width: 48%;
   flex-shrink: 0;
   border-radius: 10px; /*redondea el borde*/
   overflow: hidden; /*genera scrolls. Si se desborda de su elemento, lo oculta*/
@@ -191,6 +247,7 @@ figure{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .form-email input{
@@ -220,9 +277,6 @@ figure{
   font-family: 'Source Sans Pro';
 }
 
-.social{
-}
-
 .social-link{
   display:inline-block; /*los <a> tienen por defecto display inline*/
   width: 30px;
@@ -234,15 +288,21 @@ figure{
 
 .social-link.twitter{
   background-image: url('../Images/twitter.svg');
+  outline: 0;
+  border: none;
 }
 
 .social-link.instagram{
   background-image: url('../Images/instagram.svg');
-  }
+  outline: 0;
+  border: none;
+}
 
-  .social-link.github{
-    background-image: url('../Images/github.svg');
-    }
+.social-link.github{
+  background-image: url('../Images/github.svg');
+  outline: 0;
+  border: none;
+}
 
 .footer{
   color: white;
@@ -250,14 +310,19 @@ figure{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer img{
-  vertical-align: middle; /*Util para cuando se mexcla tex con img*/
+  vertical-align: middle; /*Util para cuando se mescla tex con img*/
 }
 
 .container{
-  width: 1000px;
+  max-width: 1000px;
+  /*width: 100%; Una de las formas para que el contenido se ajuste a la pantalla completa 
+  pero según los pixeles indicados arriba. Esto para que al hacerlo resposive se evite llevar el
+  contenido al centro*/
+  flex: 1; /*Con esta forma se toma todo el ancho disponible dentro del elemento (rd)*/
   margin: 0 auto;
   display: inherit;
   justify-content: inherit;
@@ -267,3 +332,172 @@ figure{
 }/*cada sección debe envolverse en un container para
 llevar el contenido al centro, como dentro de una caja. 
 En lugar de darle un mismo fondo a todo el body*/
+
+/*Si es destkop first, empezar por el MQ más grande.Las
+siguientes son los tamaños más estandar*/
+@media screen and (max-width: 1023px) {
+  .container {
+    padding: 0 1em;
+  }
+  .hero{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+  }
+  .hero-image {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.3;
+  }
+  h1 {
+    color: #fafafa;
+    font-size: 2em;
+    z-index: 2;;
+  }
+  .courses-list-title{
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .burger-button{
+    display: block ;
+  }
+  .header {
+    display: block;
+    height: auto;
+  }
+  .header ol {
+    display: block;
+  }
+  .header ol li {
+    height: 50px;
+  }
+  .header a {
+    justify-content: center;
+    color: white;
+    height: 40px;
+    font-size: 2em;
+    text-decoration: underline;
+    margin-bottom: .5em;
+  }
+  .header .logo {
+    text-align: center;
+  }
+  .menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: -100vw; /*de esta manera el menú se encuentra oculto por defecto*/
+    width: 100vw;
+    bottom: 0;
+    background:rgba(105, 140, 139, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+  }
+  .menu.is-active {
+    left: 0;
+  }/*esta unión de clases hará que el menú se muestre cuando se dispare esta acción*/
+  .portfolio{
+    padding: 0;
+  }
+  .project {
+    display: block;
+  }
+  .project-imageContainer {
+    width: auto;
+    text-align: center;
+  }
+  .project-details {
+    width: auto;
+    /*font-size: 16px;*/
+  }
+  .project-course, .project-date, .project-url {
+    margin: .1em, 0;
+  }
+  .project-title {
+    font-size: 1.5em;
+    margin-bottom: .3em;
+  }
+  .project-url {
+    font-size: 1em;
+  }
+  .project-course {
+    font-size: .8em;
+  }
+  .project-date {
+    font-size: 1em;
+  }
+  .project-description {
+    font-size: 1em;
+  }
+  .course {
+    width: auto;
+    flex-shrink: initial; /*sirve para resetear*/
+  }
+  .course img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .hero {
+    padding: 2em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .project-details {
+    font-size: 14px;
+  }
+  .course-detail {
+    margin: -40px 10px 10px 10px;
+    padding: 10px;
+  }
+  .contact {
+    height: auto;
+    padding: 1em 0;
+    text-align: center;
+    display: block;
+  }
+  .form-email button {
+    margin: 1em auto;
+  }
+  .form-email h3 {
+    margin-top: 0;
+  }
+  .footer {
+    display: block;
+    text-align: center;
+    border: 1px solid transparent
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .header a {
+    font-size: 1.5em;
+  }
+  .hero {
+    padding: 1em 1em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  .course-description {
+    font-size: .8em;
+  }
+}
