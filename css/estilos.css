@@ -124,8 +124,7 @@ y más que su contenedor (tiene 1000px)= medidas relativas*/
   margin-bottom: 10px;
 }
 
-.project-course, .project-date,
-.project-url{
+.project-course, .project-date {
 margin: 10px, 0;
 }
 
@@ -188,10 +187,6 @@ ol,ul{
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-figure{
-  margin: 0
 }
 
 .courses-list-title{
@@ -420,15 +415,12 @@ siguientes son los tamaños más estandar*/
     width: auto;
     /*font-size: 16px;*/
   }
-  .project-course, .project-date, .project-url {
+  .project-course, .project-date {
     margin: .1em, 0;
   }
   .project-title {
     font-size: 1.5em;
     margin-bottom: .3em;
-  }
-  .project-url {
-    font-size: 1em;
   }
   .project-course {
     font-size: .8em;
