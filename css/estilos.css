@@ -250,7 +250,7 @@ ol,ul{
   border-style: solid;
   border-radius: 5px;
   padding: 10px 20px 10px 25px;
-  background-image: url('../Images/envelope.svg');
+  background-image: url('../images/envelope.svg');
   background-size: 15px 15px;
   background-repeat: no-repeat;
   background-position-x: 5px;
@@ -282,19 +282,19 @@ ol,ul{
 }
 
 .social-link.twitter{
-  background-image: url('../Images/twitter.svg');
+  background-image: url('../images/twitter.svg');
   outline: 0;
   border: none;
 }
 
 .social-link.instagram{
-  background-image: url('../Images/instagram.svg');
+  background-image: url('../images/instagram.svg');
   outline: 0;
   border: none;
 }
 
 .social-link.github{
-  background-image: url('../Images/github.svg');
+  background-image: url('../images/github.svg');
   outline: 0;
   border: none;
 }
